@@ -1,0 +1,139 @@
+/* Breakpoints: mobile ≤640 · tablet 641–1024 · large ≥1600. */
+
+@media (hover: none) {
+  html, body { cursor: auto; }
+  button, a, .ride-surface, .proj-card, .writing-item, .close-x { cursor: pointer; }
+  .contact-input, .contact-area { cursor: text; }
+  .tron-cursor { display: none; }
+}
+
+/* ---- Mobile ≤ 640px ---- */
+@media (max-width: 640px) {
+  .hero {
+    left: 10px;
+    top: 48px;
+    max-width: calc(100vw - 20px);
+    padding: 10px 12px;
+  }
+  .hero-name { font-size: 20px; }
+  .hero-role { font-size: 11px; margin-bottom: 6px; }
+  .hero-tag  { display: none; }
+  .hero-hint { display: none; }
+
+  .hud {
+    padding: 8px 10px;
+    font-size: 9px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .hud-right { display: none; }
+  .hud-left  { gap: 8px; }
+
+  .hud-bottom { padding: 6px 10px; font-size: 8px; }
+  .hud-bottom > div:first-child { display: none; }
+
+  .program-terminal {
+    bottom: 78px;
+    left: 8px;
+    width: calc(58vw - 8px);
+    max-width: none;
+    padding: 8px 10px 10px;
+  }
+  .program-header { padding-right: 30px; }
+  .program-line   { font-size: 11px; }
+  .program-terminal .program-uid,
+  .program-terminal .program-sep { display: none; }
+
+  .program-toggle {
+    right: 0;
+    width: 24px;
+    height: 20px;
+    font-size: 13px;
+  }
+  .program-terminal.is-open .program-toggle {
+    right: 0;
+    width: 30px;
+    height: 26px;
+    font-size: 15px;
+  }
+  .program-terminal.is-collapsed {
+    width: auto;
+    padding: 4px 10px;
+  }
+  .program-terminal.is-collapsed .program-header { padding-right: 30px; }
+
+  .controls { bottom: 78px; right: 8px; gap: 4px; }
+  .ctrl-btn { padding: 5px 8px; font-size: 9px; min-width: 86px; }
+
+  .section-overlay { padding: 52px 8px 8px; }
+  .section-content { max-height: calc(100vh - 80px); }
+  .section-body    { max-height: calc(100vh - 160px); padding: 8px 2px 16px; }
+  .section-header  { padding: 10px 12px; margin-bottom: 10px; }
+  .section-title   { font-size: 18px; letter-spacing: 0.15em; }
+  .close-x         { font-size: 10px; top: -28px; }
+
+  .proj-grid    { grid-template-columns: 1fr; gap: 10px; }
+  .skills-cols  { grid-template-columns: 1fr; gap: 14px; }
+  .about-grid   { grid-template-columns: 1fr; gap: 16px; }
+  .about-stats  { grid-template-columns: 1fr 1fr; }
+  .stat-num     { font-size: 22px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .writing-item  { grid-template-columns: 60px 1fr; gap: 10px; }
+  .writing-read  { display: none; }
+  .writing-title { font-size: 12px; }
+  .writing-date  { font-size: 10px; }
+
+  .timeline      { padding-left: 18px; }
+  .tl-item::before { left: -18px; width: 10px; height: 10px; }
+  .tl-role       { font-size: 12px; }
+  .tl-desc       { font-size: 12px; }
+
+  .boot         { padding: 20px; }
+  .boot-title   { font-size: 32px; letter-spacing: 0.2em; }
+  .boot-lines   { font-size: 10px; }
+
+  :root {
+    --fs-xl: 24px;
+    --fs-xxl: 36px;
+  }
+}
+
+/* ---- Tablet 641–1024px ---- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero       { max-width: 280px; }
+  .hero-name  { font-size: 26px; }
+  .proj-grid  { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .program-terminal { width: min(360px, calc(100vw - 56px)); }
+  .section-overlay  { padding: 70px 24px 24px; }
+  .contact-grid     { grid-template-columns: 1fr; }
+  .about-grid       { grid-template-columns: 1fr; }
+}
+
+/* ---- Large ≥ 1600px ---- */
+@media (min-width: 1600px) {
+  .hero       { max-width: 380px; padding: 22px 24px; }
+  .hero-name  { font-size: 36px; }
+  .hero-role  { font-size: 15px; }
+  .hero-tag   { font-size: 13px; }
+  .program-terminal { width: 500px; }
+  .section-content  { width: min(1300px, 100%); }
+  .proj-grid        { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .node-label       { font-size: 12px; padding: 3px 10px; }
+  :root {
+    --fs-sm: 14px;
+    --fs-md: 16px;
+    --fs-lg: 22px;
+    --fs-xl: 36px;
+    --fs-xxl: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perspective-grid::before,
+  .crt-overlay,
+  .program-dot,
+  .hud-dot { animation: none !important; }
+  .skill-bar-fill { transition: none !important; }
+  * { scroll-behavior: auto !important; }
+}

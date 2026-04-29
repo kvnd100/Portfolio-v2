@@ -1,0 +1,106 @@
+/* ---- PROGRAM narrator terminal ---- */
+.program-terminal {
+  position: fixed;
+  bottom: 38px;
+  left: 28px;
+  width: 440px;
+  max-width: calc(100vw - 56px);
+  z-index: 750;
+  border: 1px solid var(--cyan-line);
+  background: rgba(2, 6, 13, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 10px 14px 12px;
+  pointer-events: none;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.program-header {
+  position: relative;
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  padding-right: 34px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cyan-line);
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+.program-uid { white-space: nowrap; }
+
+/* Anchored to header so it tracks the PROGRAM text line, not the box centre.
+   pointer-events: auto escapes the parent's pointer-events: none. */
+.program-toggle {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 0;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--cyan-line);
+  color: var(--cyan-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0;
+  background: rgba(2, 6, 13, 0.85);
+  pointer-events: auto;
+  cursor: none;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  z-index: 2;
+}
+.program-toggle:hover  { color: var(--cyan); border-color: var(--cyan); background: rgba(0, 229, 255, 0.12); }
+.program-toggle:active { transform: translateY(-50%) scale(0.94); }
+
+.program-terminal.is-open .program-toggle {
+  width: 26px;
+  height: 22px;
+  font-size: 13px;
+}
+
+.program-terminal.is-collapsed .program-header {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.program-terminal.is-collapsed .program-toggle { top: 50%; }
+
+.program-dot {
+  width: 7px; height: 7px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  animation: programPulse 1.6s ease-in-out infinite;
+}
+.program-sep { color: var(--ink-3); }
+.program-lines {
+  display: flex; flex-direction: column;
+  gap: 4px;
+  min-height: 22px;
+}
+.program-line {
+  display: flex; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-1);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.program-line.fading { opacity: 0; transform: translateX(-6px); }
+.program-arrow { color: var(--cyan); flex-shrink: 0; }
+.program-text  { flex: 1; color: var(--ink-0); }
+.program-caret {
+  color: var(--cyan);
+  animation: programCaret 0.7s steps(2) infinite;
+  margin-left: 2px;
+}
+@keyframes programPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@keyframes programCaret { 50% { opacity: 0; } }

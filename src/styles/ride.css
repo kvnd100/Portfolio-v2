@@ -1,0 +1,79 @@
+/* ---- Grid backgrounds ---- */
+.perspective-grid {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(0, 229, 255, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 229, 255, 0.12) 0%, transparent 60%),
+    var(--bg-0);
+  overflow: hidden;
+  pointer-events: none;
+}
+.perspective-grid::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -50%;
+  width: 200%;
+  height: 80%;
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.35) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: perspective(600px) rotateX(62deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 80%, transparent 100%);
+  animation: gridMove 8s linear infinite;
+  opacity: 0.55;
+}
+.perspective-grid::after {
+  content: '';
+  position: absolute;
+  top: 32%; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.5), transparent);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+}
+@keyframes gridMove {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 80px, 80px 0; }
+}
+
+.flat-grid {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(2, 6, 13, 0.85) 85%),
+    linear-gradient(rgba(0, 229, 255, 0.18) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(90deg, rgba(0, 229, 255, 0.18) 1px, transparent 1px) 0 0 / 56px 56px,
+    var(--bg-0);
+  pointer-events: none;
+}
+
+/* ---- Ride surface ---- */
+.ride-surface { cursor: none; touch-action: manipulation; }
+
+/* Section nodes */
+.section-node-tag {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.node-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cyan-soft);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(2, 6, 13, 0.8);
+  padding: 2px 8px;
+  border: 1px solid var(--cyan-line);
+  white-space: nowrap;
+}
+.node-code {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink-2);
+  margin-top: 3px;
+}

@@ -1,0 +1,139 @@
+/* ---- Design tokens ---- */
+:root {
+  --bg-0: #02060d;
+  --bg-1: #05090f;
+  --bg-2: #0a1220;
+  --ink-0: #e9fbff;
+  --ink-1: #a8e6f0;
+  --ink-2: #5b7d8a;
+  --ink-3: #2a3c47;
+
+  --cyan: #00e5ff;
+  --cyan-soft: #7df9ff;
+  --cyan-deep: #0088a8;
+  --cyan-ghost: rgba(0, 229, 255, 0.08);
+  --cyan-line: rgba(0, 229, 255, 0.22);
+
+  --warn: #ffae00;
+  --err: #ff3b3b;
+
+  --fs-micro: 10px;
+  --fs-xs: 11px;
+  --fs-sm: 13px;
+  --fs-md: 15px;
+  --fs-lg: 20px;
+  --fs-xl: 32px;
+  --fs-xxl: 56px;
+
+  --font-display: 'Orbitron', 'Eurostile', 'Michroma', sans-serif;
+  --font-ui: 'Rajdhani', 'Chakra Petch', 'Barlow Semi Condensed', sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-0);
+  color: var(--ink-0);
+  font-family: var(--font-ui);
+  font-size: var(--fs-md);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+
+#root { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+
+button {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: none;
+}
+a { color: inherit; text-decoration: none; cursor: none; }
+
+/* ---- Typography ---- */
+.t-display { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.t-ui      { font-family: var(--font-ui);      font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.t-mono    { font-family: var(--font-mono);    font-weight: 400; letter-spacing: 0; }
+
+/* ---- Glow utilities ---- */
+.glow-cyan { color: var(--cyan); text-shadow: 0 0 6px var(--cyan), 0 0 12px rgba(0, 229, 255, 0.4); }
+.glow-soft { color: var(--cyan-soft); text-shadow: 0 0 4px rgba(0, 229, 255, 0.5); }
+
+/* ---- Layout utilities ---- */
+.row    { display: flex; gap: 10px; align-items: center; }
+.col    { display: flex; flex-direction: column; }
+.spacer { flex: 1; }
+
+/* ---- Panel chrome ---- */
+.panel {
+  position: relative;
+  background: linear-gradient(180deg, rgba(5, 9, 15, 0.85), rgba(2, 6, 13, 0.92));
+  border: 1px solid var(--cyan-line);
+  backdrop-filter: blur(4px);
+}
+.panel::before, .panel::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+}
+.panel::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.panel::after  { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.panel-corners { position: absolute; inset: 0; pointer-events: none; }
+.panel-corners span {
+  position: absolute; width: 12px; height: 12px;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 4px var(--cyan);
+}
+.panel-corners span:nth-child(1) { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.panel-corners span:nth-child(2) { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+  padding: 10px 18px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid var(--cyan);
+  transition: all 0.15s ease;
+  position: relative;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  text-decoration: none;
+}
+.btn:hover {
+  background: var(--cyan);
+  color: var(--bg-0);
+  box-shadow: 0 0 20px var(--cyan), inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-1);
+  border-color: var(--cyan-line);
+}
+.btn--ghost:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.06);
+  box-shadow: none;
+}
+
+/* derezz keyframe (used on overlay teardown) */
+@keyframes derezz {
+  0%   { opacity: 1;   filter: blur(0); }
+  50%  { opacity: 0.6; filter: blur(2px) hue-rotate(20deg); }
+  100% { opacity: 0;   filter: blur(8px); transform: scale(1.02); }
+}
+.derezz { animation: derezz 0.4s forwards; }
