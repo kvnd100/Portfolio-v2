@@ -50,7 +50,11 @@
 }
 
 /* ---- Ride surface ---- */
-.ride-surface { cursor: none; touch-action: manipulation; }
+.ride-surface {
+  cursor: none;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+}
 
 /* Section nodes */
 .section-node-tag {

@@ -45,6 +45,21 @@ html, body {
   cursor: none;
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.section-overlay .section-content {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+}
+
 #root { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
 
 button {
