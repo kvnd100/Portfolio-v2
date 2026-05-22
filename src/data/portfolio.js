@@ -148,10 +148,10 @@ export const PORTFOLIO = {
     site:     'kvnd100.github.io/portfolio-website',
   },
   resume: {
-    file: '/Kavindu_Resume_v2.pdf',
-    label: 'Kavindu_Resume_v2.pdf',
-    sizeKb: 269,
-    updated: '2025.04.07',
+    file: '/Kavindu_Resume_v3.pdf',
+    label: 'Kavindu_Resume_v3.pdf',
+    sizeKb: 111,
+    updated: '2026.05.18',
     pages: 2,
   },
 };

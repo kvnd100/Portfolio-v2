@@ -8,7 +8,7 @@ Single-page interactive portfolio with a **Tron** aesthetic: ride a lightcycle o
 - Responsive layouts for mobile / tablet / desktop ([`styles/responsive.css`](src/styles/responsive.css))
 - Optional **SFX** (Web Audio lightcycle hum and UI clicks) and **MUSIC** (theme loop via [`public/Circuit Noir.mp3`](public/Circuit%20Noir.mp3))
 - **PROGRAM** terminal narrator with queued typewriter lines ([`hooks/useProgram.js`](src/hooks/useProgram.js))
-- Résumé PDF linked from the Resume sector ([`public/Kavindu_Resume_v2.pdf`](public/Kavindu_Resume_v2.pdf))
+- Résumé PDF linked from the Resume sector ([`public/Kavindu_Resume_v3.pdf`](public/Kavindu_Resume_v3.pdf))
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ src/
     responsive.css     # **All** breakpoints (load last)
 
 public/
-  Kavindu_Resume_v2.pdf
+  Kavindu_Resume_v3.pdf
   Circuit Noir.mp3
 ```
 
@@ -62,7 +62,7 @@ public/
 
 ## Swapping assets
 
-- **Résumé:** Replace `public/Kavindu_Resume_v2.pdf` and update `PORTFOLIO.resume` (file path string, optional size/date/pages metadata).
+- **Résumé:** Replace `public/Kavindu_Resume_v3.pdf` and update `PORTFOLIO.resume` (file path string, optional size/date/pages metadata).
 - **Theme:** Replace `public/Circuit Noir.mp3` if you rename the file or update `<audio>` / loader references accordingly (see [`useThemeMusic.js`](src/hooks/useThemeMusic.js)).
 
 ---
