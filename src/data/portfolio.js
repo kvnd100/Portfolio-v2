@@ -78,34 +78,33 @@ export const PORTFOLIO = {
   experience: [
     {
       role: 'Software Engineer',
-      company: 'Mathemly · Apr 2025 — Present',
+      company: 'Mathemly · Jan 2025 — Present',
       desc: 'Shipping 5+ customer-facing modules in React and Next.js with responsive layouts, multi-step form flows, and validation. Integrated frontend with Strapi CMS and REST APIs across 10+ endpoints. Built end-to-end CRM workflows (lead capture, onboarding, opportunity tracking) with auth persistence and RBAC. Created a 15+ component library with standardised prop interfaces.',
     },
     {
       role: 'Junior Software Engineer',
-      company: 'Random Software · Jul 2024 — Dec 2024',
+      company: 'Random Software · Jul 2023 — Dec 2024',
       desc: 'Delivered Angular frontend features and AWS-backed services for a SaaS platform serving US and Canada. Shipped on 2-week Agile sprints alongside 8+ engineers, designers, and PMs. Resolved 15+ critical production issues via hotfixes, and built/maintained Cypress E2E suites covering core user flows.',
     },
     {
-      role: 'Trainee Software Engineer',
+      role: 'Intern Software Engineer',
       company: 'Syntax Genie · Oct 2022 — Mar 2023',
       desc: 'Developed React-based interfaces and Firebase backend integrations for customer-facing features handling real-time data sync and authentication. Contributed to debugging and performance work that improved page-load times and overall reliability.',
     },
   ],
   education: [
-    { school: 'University of Colombo', degree: 'MSc in Computer Science', period: '2025 — 2027' },
-    { school: 'University of Bedfordshire', degree: 'BSc (Hons) Computer Science & Software Engineering — Second Class Upper', period: '2020 — 2023' },
+    { school: 'University of Colombo', degree: 'MSc in Computer Science', period: '2025 — present' },
+    { school: 'University of Bedfordshire', degree: 'BSc (Hons) Computer Science & Software Engineering', period: '2020 — 2024' },
   ],
   skills: [
     {
       group: 'Languages',
       items: [
-        { name: 'TypeScript', level: 92 },
         { name: 'JavaScript', level: 95 },
-        { name: 'SQL', level: 90 },
-        { name: 'Python',        level: 80 },
-        { name: 'Java',        level: 78 },
-        { name: 'PHP',        level: 78 },
+        { name: 'TypeScript', level: 92 },
+        { name: 'HTML',       level: 95 },
+        { name: 'CSS',        level: 90 },
+        { name: 'SQL',        level: 90 },
       ],
     },
     {
@@ -151,7 +150,7 @@ export const PORTFOLIO = {
     file: '/Kavindu_Resume_v3.pdf',
     label: 'Kavindu_Resume_v3.pdf',
     sizeKb: 111,
-    updated: '2026.05.18',
+    updated: '2026.05.30',
     pages: 2,
   },
 };
