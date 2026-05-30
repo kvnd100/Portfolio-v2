@@ -38,8 +38,8 @@ export function ResumePane({ sound }) {
         </a>
       </div>
       <div className="resume-footer">
-        &gt; MSc Computer Science — University of Colombo (2025 — 2027).<br />
-        &gt; BSc (Hons) Computer Science &amp; Software Engineering — University of Bedfordshire, Second Class Upper.<br />
+        &gt; MSc Computer Science — University of Colombo (2025 — present).<br />
+        &gt; BSc (Hons) Computer Science &amp; Software Engineering — University of Bedfordshire (2020 — 2024).<br />
         &gt; Currently shipping at Mathemly. Remote-friendly globally.
       </div>
     </div>
